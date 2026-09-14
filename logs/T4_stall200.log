@@ -1,0 +1,21 @@
+Parsing design file 'design.sv'
+Parsing design file 'testbench.sv'
+Top Level Modules:
+       top_tb
+TimeScale is 1 ns / 1 ns
+All of 6 modules done
+=== NoC CEP: NUM=200 MODE=0 STALL=1 ===
+MODE: 0=random 1=hotspot(to 0) 2=all-to-one(to 2) 3=single-flit 4=long-stress
+=== SCOREBOARD: exp=200 got_pkts=200 got_flits=1097 errors=0 pending_exp=0 ===
+=== COVERAGE: open Coverage tab (Riviera) for cg bins/x-src-dest ===
+=== TEST DONE ===
+$finish at simulation time                35045
+"design.sv", 297: top_tb.dut.u_sva.unnamed$$_1, 3504 attempts, 0 match
+"design.sv", 292: top_tb.dut.u_sva.unnamed$$_0, 3504 attempts, 108 match
+"design.sv", 285: top_tb.dut.u_sva.g_h2t[0].unnamed$$_0, 3504 attempts, 35 match
+"design.sv", 285: top_tb.dut.u_sva.g_h2t[1].unnamed$$_0, 3504 attempts, 49 match
+"design.sv", 285: top_tb.dut.u_sva.g_h2t[2].unnamed$$_0, 3504 attempts, 35 match
+"design.sv", 285: top_tb.dut.u_sva.g_h2t[3].unnamed$$_0, 3504 attempts, 35 match
+"design.sv", 285: top_tb.dut.u_sva.g_h2t[4].unnamed$$_0, 3504 attempts, 24 match
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 35045 ns
