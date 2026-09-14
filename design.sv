@@ -1,5 +1,4 @@
-// CEP1 - 5-Port NoC Router verification (SystemVerilog, Synopsys VCS)
-// A8451 SystemVerilog for Verification
+// 5-Port NoC Router verification (SystemVerilog, Synopsys VCS)
 // design.sv (Design pane): package + interface + DUT + SVA (+define+ENABLE_SVA)
 
 package router_pkg;
