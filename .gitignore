@@ -1,0 +1,20 @@
+# VCS / simulation build artifacts (EDA Playground result.zip contents)
+simv
+simv.daidir/
+csrc/
+*.vdb/
+ucli.key
+work/
+vcs/
+DVEfiles/
+AN.DB/
+.vcs.timestamp
+
+# Waveforms / dumps
+*.vpd *.vcd *.fsdb *.shm
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp *~
+.vscode/
