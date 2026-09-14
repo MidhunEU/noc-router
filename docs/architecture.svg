@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="540" viewBox="0 0 920 540" font-family="sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#333"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#A50021"/>
+    </marker>
+  </defs>
+
+  <style>
+    .tb  { fill:#EDF1F8; stroke:#34507D; stroke-width:1.5; }
+    .dut { fill:#FCEBEE; stroke:#A50021; stroke-width:2; }
+    .sva { fill:#FFF7F8; stroke:#A50021; stroke-width:1.5; stroke-dasharray:7 4; }
+    .t   { font-size:14px; font-weight:bold; fill:#111; }
+    .s   { font-size:11px; fill:#444; }
+    .lbl { font-size:11px; fill:#222; }
+    .flow{ stroke:#333; stroke-width:1.6; fill:none; }
+    .bind{ stroke:#A50021; stroke-width:1.6; fill:none; stroke-dasharray:5 4; }
+  </style>
+
+  <!-- top row -->
+  <rect class="tb" x="20" y="40" width="150" height="66" rx="6"/>
+  <text class="t" x="95" y="66" text-anchor="middle">Generator</text>
+  <text class="s" x="95" y="84" text-anchor="middle">constrained-random</text>
+  <text class="s" x="95" y="98" text-anchor="middle">modes 0&#8211;4</text>
+
+  <rect class="tb" x="230" y="40" width="150" height="66" rx="6"/>
+  <text class="t" x="305" y="66" text-anchor="middle">Driver</text>
+  <text class="s" x="305" y="84" text-anchor="middle">5 ports, clocking block</text>
+  <text class="s" x="305" y="98" text-anchor="middle">+ backpressure</text>
+
+  <rect class="dut" x="440" y="14" width="220" height="150" rx="6"/>
+  <text class="t" x="550" y="40" text-anchor="middle">noc_router (DUT)</text>
+  <text class="s" x="550" y="62" text-anchor="middle">5 ports &#215; 2 VCs, 8-flit buffers</text>
+  <text class="s" x="550" y="80" text-anchor="middle">XY routing, round-robin arbiter</text>
+  <text class="s" x="550" y="98" text-anchor="middle">wormhole lock HEAD&#8594;TAIL</text>
+  <text class="s" x="550" y="116" text-anchor="middle">VALID/READY stall-hold</text>
+  <text class="s" x="550" y="140" text-anchor="middle">5&#215;N / S / E / W / Local</text>
+
+  <rect class="tb" x="720" y="40" width="150" height="66" rx="6"/>
+  <text class="t" x="795" y="66" text-anchor="middle">Monitor</text>
+  <text class="s" x="795" y="84" text-anchor="middle">samples every</text>
+  <text class="s" x="795" y="98" text-anchor="middle">accepted output flit</text>
+
+  <!-- top-row flows -->
+  <line class="flow" x1="170" y1="73" x2="226" y2="73" marker-end="url(#arr)"/>
+  <text class="lbl" x="198" y="64" text-anchor="middle">packets</text>
+  <line class="flow" x1="380" y1="73" x2="436" y2="73" marker-end="url(#arr)"/>
+  <text class="lbl" x="408" y="64" text-anchor="middle">flits</text>
+  <line class="flow" x1="660" y1="73" x2="716" y2="73" marker-end="url(#arr)"/>
+  <text class="lbl" x="688" y="64" text-anchor="middle">flits</text>
+
+  <!-- sva checker -->
+  <rect class="sva" x="440" y="196" width="220" height="62" rx="6"/>
+  <text class="t" x="550" y="220" text-anchor="middle">sva_checker</text>
+  <text class="s" x="550" y="238" text-anchor="middle">5 asserts &#183; 3 covers</text>
+  <line class="bind" x1="550" y1="164" x2="550" y2="192" marker-end="url(#arrR)"/>
+  <text class="lbl" x="560" y="182">bind</text>
+
+  <!-- scoreboard -->
+  <rect class="tb" x="250" y="306" width="330" height="70" rx="6"/>
+  <text class="t" x="415" y="332" text-anchor="middle">Scoreboard</text>
+  <text class="s" x="415" y="350" text-anchor="middle">tag-matched, order-independent check</text>
+  <text class="s" x="415" y="364" text-anchor="middle">vs golden flit rebuild</text>
+
+  <path class="flow" d="M 95 106 L 95 270 L 340 270 L 340 306" marker-end="url(#arr)"/>
+  <text class="lbl" x="102" y="200">expected</text>
+  <path class="flow" d="M 795 106 L 795 270 L 540 270 L 540 306" marker-end="url(#arr)"/>
+  <text class="lbl" x="700" y="262">observed</text>
+
+  <!-- coverage -->
+  <rect class="tb" x="250" y="420" width="330" height="70" rx="6"/>
+  <text class="t" x="415" y="446" text-anchor="middle">Coverage</text>
+  <text class="s" x="415" y="464" text-anchor="middle">src &#215; dest &#215; vc &#215; len + 3 crosses</text>
+
+  <path class="flow" d="M 40 106 L 40 455 L 250 455" marker-end="url(#arr)"/>
+  <text class="lbl" x="47" y="300">samples</text>
+</svg>
