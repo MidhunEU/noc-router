@@ -1,4 +1,4 @@
-# Constrained-Random and Assertion-Based Layered Testbench for Verification of 5-Port NoC Mesh Router with Virtual Channels using SystemVerilog
+# Constrained-Random Verification of a 5-Port NoC Router using SystemVerilog
 
 ![SystemVerilog](https://img.shields.io/badge/SystemVerilog-IEEE%201800-red)
 ![Sim](https://img.shields.io/badge/tested%20on-Synopsys%20VCS-blue)
